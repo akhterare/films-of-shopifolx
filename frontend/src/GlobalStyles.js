@@ -64,3 +64,47 @@ export const Container = styled.div`
     max-width: 1300px;
     width: 100%;
     `;
+
+export const Input = styled.input.attrs({
+    type: "text"
+})`
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+    width: 60%;
+    font-family: Roboto, sans-serif;
+    font-size: 18px;
+    padding: 10px;
+    margin: 10px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    border-radius: 15px;
+
+    :focus {
+        border: 1px solid #FFFFFF;
+    }
+
+`;
+
+export const Button = styled.button`
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+    font-family: Roboto, sans-serif;
+    border-radius: 20px;
+    background-color: #D20404;
+    color: #FFFFFF;
+    padding: 15px;
+    margin: 10px;
+    font-size: 18px;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    transition: all .5s ease;
+    &:hover{
+        background-color: #BF2121;  
+        transform: translateY(-.5rem) scale(1.02);
+        color: #000;
+    }
+    &:active{
+        transform: translateY(.5rem);
+    }
+`;

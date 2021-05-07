@@ -1,6 +1,6 @@
 import React from "react"
-import { WelcomeContainer, WelcomeContent, WelcomeSubTitles, WelcomeTitle } from "./Welcome.styles";
-import Input from "../Input/Input"
+import { CallToAction, WelcomeContainer, WelcomeContent, WelcomeSubTitles, WelcomeTitle } from "./Welcome.styles";
+import { Input, Button } from "../../GlobalStyles"
 
 const Welcome = ( props ) => (
    <WelcomeContainer>
@@ -8,7 +8,10 @@ const Welcome = ( props ) => (
            <WelcomeSubTitles>SHOPPIES 2021 NOMINATIONS</WelcomeSubTitles>
            <WelcomeTitle>FILMS OF SHOPIFOLX</WelcomeTitle>
            <WelcomeSubTitles>Choose your films. Share with Shopifolx. </WelcomeSubTitles>
-           <Input />
+           <CallToAction>
+               <Input />
+               <Button>Choose your nominees</Button>
+           </CallToAction>
        </WelcomeContent>
    </WelcomeContainer>
 )
