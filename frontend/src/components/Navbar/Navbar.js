@@ -12,9 +12,9 @@ const Navbar = () => (
     <Nav>
         <NavbarContainer>
             <Menu>
-                <MenuItems to="/">Home</MenuItems>
-                <MenuItems to="/pick-films">Pick Films</MenuItems>
-                <MenuItems to="/nominations">My Nominations</MenuItems>
+                <MenuItems to="/films-of-shopifolx/">Home</MenuItems>
+                <MenuItems to="/films-of-shopifolx/pick-films">Pick Films</MenuItems>
+                <MenuItems to="/films-of-shopifolx/nominations">My Nominations</MenuItems>
             </Menu>   
         </NavbarContainer>
     </Nav>

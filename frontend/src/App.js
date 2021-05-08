@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import GlobalStyles from './GlobalStyles';
 import { Navbar } from './components';
 import Landing from './pages/Landing/Landing.js';
@@ -17,7 +17,7 @@ function App() {
       <Switch>
         <Route path="/" exact component={() => <Landing />} />
         <Route path="/registration" exact component={() => <Registration />} />
-        <Route path="/pick-films" exact component={() => <PickFilms />} />
+        <Route path="/films-of-shopifolx/pick-films" exact component={() => <PickFilms />} />
         <Route path="/nominations" exact component={() => <Nominations />} />
       </Switch>
     </Router>
