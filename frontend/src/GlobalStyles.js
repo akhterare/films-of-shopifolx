@@ -25,7 +25,7 @@ const GlobalStyles = createGlobalStyle`
 
     h4 {
         font-family: Roboto, sans-serif;
-        font-weight: 700;
+        font-weight: 400;
         font-size: 20px;
         line-height: 1.6;
     }
@@ -42,7 +42,7 @@ const GlobalStyles = createGlobalStyle`
         font-family: Roboto, sans-serif;
         font-style: normal;
         font-weight: normal;
-        font-size: 36px;
+        font-size: 48px;
         line-height: 43px;
     }
 
@@ -80,10 +80,11 @@ export const Input = styled.input.attrs({
     box-sizing: border-box;
     border-radius: 15px;
 
-    :focus {
-        border: 1px solid #FFFFFF;
+    &:focus{
+        border: 1px solid #808080 !important;
+        border-radius: 15px;
+        transform: translateY(.2rem);
     }
-
 `;
 
 export const Button = styled.button`
@@ -101,10 +102,9 @@ export const Button = styled.button`
     transition: all .5s ease;
     &:hover{
         background-color: #BF2121;  
-        transform: translateY(-.5rem) scale(1.02);
-        color: #000;
+        transform: translateY(-.2rem) scale(1.01);
     }
     &:active{
-        transform: translateY(.5rem);
+        transform: translateY(.2rem);
     }
 `;

@@ -1,30 +1,34 @@
-import React from "react";
+import React,  { useState, useEffect } from "react";
+import Hero from "../../components/Hero/Hero.js"
+import SearchBar from "../../components/SearchBar/SearchBar.js";
+import PosterGallery from "../../components/PosterGallery/PosterGallery.js";
 
-function Home() {
+function PickFilms() {
+	const [movies, setMovies] = useState([]);
+	const [searchValue, setSearchValue] = useState('');
+
+	const getMovieRequest = async (searchValue) => {
+		const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=d8daf75a`;
+
+		const response = await fetch(url);
+		const responseJson = await response.json();
+
+		if (responseJson.Search) {
+			setMovies(responseJson.Search);
+		}
+	};
+
+	useEffect(() => {
+		getMovieRequest(searchValue);
+	}, [searchValue]);
+
   return (
-    <div className="home">
-      <div class="container">
-        <div class="row align-items-center my-5">
-          <div class="col-lg-7">
-            <img
-              class="img-fluid rounded mb-4 mb-lg-0"
-              src="http://placehold.it/900x400"
-              alt=""
-            />
-          </div>
-          <div class="col-lg-5">
-            <h1 class="font-weight-light">Home</h1>
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
-            </p>
-          </div>
-        </div>
-      </div>
+    <div>
+      <Hero title="name your picks." subtitle="choose up to 5 films to nominate for this year’s Shoppies awards."/>
+      <SearchBar value={searchValue} setSearchValue={setSearchValue} />
+      <PosterGallery movies={movies}/>
     </div>
   );
 }
 
-export default Home;
+export default PickFilms;

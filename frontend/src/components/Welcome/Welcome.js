@@ -1,16 +1,20 @@
 import React from "react"
-import { CallToAction, WelcomeContainer, WelcomeContent, WelcomeSubTitles, WelcomeTitle } from "./Welcome.styles";
+import { CallToAction, CallToActionBtn, WelcomeContainer, WelcomeContent, WelcomeSubTitles, WelcomeTitle } from "./Welcome.styles";
 import { Input, Button } from "../../GlobalStyles"
 
 const Welcome = ( props ) => (
    <WelcomeContainer>
        <WelcomeContent>
-           <WelcomeSubTitles>SHOPPIES 2021 NOMINATIONS</WelcomeSubTitles>
+           <WelcomeSubTitles>shoppies 2021 nominations</WelcomeSubTitles>
            <WelcomeTitle>FILMS OF SHOPIFOLX</WelcomeTitle>
-           <WelcomeSubTitles>Choose your films. Share with Shopifolx. </WelcomeSubTitles>
+           <WelcomeSubTitles>choose your picks. share with shopifolx. </WelcomeSubTitles>
            <CallToAction>
-               <Input />
-               <Button>Choose your nominees</Button>
+               <Input 
+                    placeholder="what's your email?" 
+                />
+               <CallToActionBtn to="/pick-films">
+                <Button>choose your nominees</Button>
+               </CallToActionBtn>
            </CallToAction>
        </WelcomeContent>
    </WelcomeContainer>

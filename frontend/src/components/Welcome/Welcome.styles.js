@@ -1,11 +1,12 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const WelcomeContainer = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-top: 7rem;
+    margin-top: 10rem;
 `;
 
 export const WelcomeContent = styled.div`
@@ -35,3 +36,12 @@ export const CallToAction = styled.div`
     align-items: center;
     width: 100%;
 `
+
+export const CallToActionBtn = styled(Link)`
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    border: none;
+    outline: none;
+`;

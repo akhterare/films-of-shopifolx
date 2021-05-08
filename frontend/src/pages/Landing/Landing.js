@@ -3,7 +3,9 @@ import Welcome from "../../components/Welcome/Welcome";
 
 function Home() {
   return (
-    <Welcome />
+    <div>
+      <Welcome />
+    </div>
   );
 }
 
