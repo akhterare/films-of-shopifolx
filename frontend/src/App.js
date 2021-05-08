@@ -16,7 +16,6 @@ function App() {
       <Navbar />
       <Switch>
         <Route path="/" exact component={() => <Landing />} />
-        <Route path="/films-of-shopifolx" exact component={() => <Landing />} />
         <Route path="/registration" exact component={() => <Registration />} />
         <Route path="/pick-films" exact component={() => <PickFilms />} />
         <Route path="/nominations" exact component={() => <Nominations />} />
