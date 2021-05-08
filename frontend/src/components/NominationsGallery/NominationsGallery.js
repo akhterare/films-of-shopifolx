@@ -25,6 +25,7 @@ const NominationsGallery = ( props ) => {
                 sectionSubtitle={"❗❗ you've reached the max nomination limit. click continue or remove a pick ❗❗"}
                 movies={props.movies}
                 handleNominationClick={props.handleNominationClick}
+                showContinue={true}
             />
         );
     }

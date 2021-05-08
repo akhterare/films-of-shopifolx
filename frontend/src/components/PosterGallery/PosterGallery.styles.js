@@ -1,4 +1,21 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+
+export const Continue = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+`
+
+export const ContinueBtn = styled(Link)`
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    border: none;
+    outline: none;
+`;
 
 export const SectionTitle = styled.h3`
     font-weight: 600;

@@ -1,10 +1,13 @@
 import React from 'react';
 import Poster from '../Poster/Poster.js'
 import { 
+    Continue,
+    ContinueBtn,
     SectionTitle, 
     SectionSubtitle, 
     PosterGalleryGrid, 
 } from './PosterGallery.styles'
+import Button from '../../GlobalStyles'
 
 const PosterGallery = ( props ) => {
     return (
@@ -19,6 +22,11 @@ const PosterGallery = ( props ) => {
                     handleNominationClick={props.handleNominationClick}
                 />
             ))}
+            {props.showContinue ? 
+                <ContinueBtn to="/nominations">
+                    <Button>continue</Button>
+                </ContinueBtn>
+            : null }
         </PosterGalleryGrid>
     );
 };
