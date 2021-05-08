@@ -8,7 +8,6 @@ export const SearchBarContainer = styled.section`
     width: 100%;
 `;
 
-
 export const SearchButton = styled(Link)`
     text-decoration: none;
     justify-content: center;
@@ -17,3 +16,22 @@ export const SearchButton = styled(Link)`
     border: none;
     outline: none;
 `;
+
+export const SearchBarSubtitleContainer = styled.div`
+    display: block;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    z-index: 2;
+`;
+
+export const SearchButtonSubtitle = styled.p`
+    color: #FFFFFF;
+    display: block;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    border: none;
+    outline: none;
+`

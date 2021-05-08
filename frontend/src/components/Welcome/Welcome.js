@@ -10,7 +10,7 @@ const Welcome = ( props ) => (
            <WelcomeSubTitles>choose your picks. share with shopifolx. </WelcomeSubTitles>
            <CallToAction>
                <Input 
-                    placeholder="what's your email?" 
+                    placeholder="what's your name?" 
                 />
                <CallToActionBtn to="/pick-films">
                 <Button>choose your nominees</Button>

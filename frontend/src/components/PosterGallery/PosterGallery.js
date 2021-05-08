@@ -1,16 +1,26 @@
 import React from 'react';
-import { Poster, PosterGalleryGrid, PosterSection } from './PosterGallery.styles'
+import Poster from '../Poster/Poster.js'
+import { 
+    SectionTitle, 
+    SectionSubtitle, 
+    PosterGalleryGrid, 
+} from './PosterGallery.styles'
 
 const PosterGallery = ( props ) => {
-	return (
-        <PosterGalleryGrid>
-        {props.movies.map((movie, index) => (
-            <PosterSection>
-                <Poster src={movie.Poster} alt='movie'/>
-            </PosterSection>
-        ))}
+    return (
+        <PosterGalleryGrid 
+            backgroundColor={props.backgroundColor}
+            >
+            <SectionTitle>{props.sectionTitle ? props.sectionTitle : ""}</SectionTitle>
+            <SectionSubtitle>{props.sectionSubtitle ? props.sectionSubtitle : ""}</SectionSubtitle>
+            {props.movies.map((movie, index) => (
+                <Poster 
+                    movie={movie}
+                    handleNominationClick={props.handleNominationClick}
+                />
+            ))}
         </PosterGalleryGrid>
-	);
+    );
 };
 
 export default PosterGallery;

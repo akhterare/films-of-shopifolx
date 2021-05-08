@@ -1,26 +1,43 @@
 import styled from 'styled-components';
 
+export const SectionTitle = styled.h3`
+    font-weight: 600;
+    margin: 10px;
+    text-align: center;
+    justify-content: center;
+    color: #D20404;
+`
+
+export const SectionSubtitle = styled.h4`
+    margin: 10px;
+    text-align: center;
+    justify-content: center;
+    color: #FFFFFF;
+    padding-bottom: 20px;
+`
+
 export const PosterGalleryGrid = styled.div`
+    background-color: ${props => props.backgroundColor};
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-top: 7rem;
+    margin-top: 2rem;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 50px 50px
-    grid-gap: 5px
+    grid-template-rows: 50px 50px;
+    grid-gap: 50px;
+    padding: 20px;
 `;
 
-export const PosterSection = styled.div`
-    display: flex;
-    padding: 10px;
-    display: inline;
-    justify-content: center;
-    align-items: center;
-    margin: 10px;
-    overflow-x: auto;
-    flex-wrap: nowrap;
-`;
-
-export const Poster = styled.img`
-    width: 15%;
+export const PosterModal = styled.div`
+    border-radius: 5px;
+    height: 30%;
+    position: absolute;
+	background: rgba(0, 0, 0, 0.8);
+	width: 100%;
+	transition: 0.5s ease;
+	opacity: 0;
+	bottom: 0;
+	font-size: 20px;
+	padding: 20px;
+	text-align: center;
 `

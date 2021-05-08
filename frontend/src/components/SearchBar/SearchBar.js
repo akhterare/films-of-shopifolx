@@ -1,6 +1,6 @@
 import React from "react"
-import { Input, Button } from "../../GlobalStyles"
-import { SearchBarContainer, SearchButton } from "./SearchBar.styles";
+import { Input } from "../../GlobalStyles"
+import { SearchBarContainer, SearchButtonSubtitle, SearchBarSubtitleContainer } from "./SearchBar.styles";
 
 const SearchBar = ( props ) => (
    <SearchBarContainer>
@@ -10,7 +10,7 @@ const SearchBar = ( props ) => (
             onChange={(event) => props.setSearchValue(event.target.value)}
             placeholder='search for your fave films' 
         />
-   </SearchBarContainer>
+    </SearchBarContainer>
 )
   
 export default SearchBar;

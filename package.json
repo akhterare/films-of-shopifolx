@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@emotion/styled": "^11.3.0",
     "react-flexbox-grid": "^2.1.2"
   }
 }
