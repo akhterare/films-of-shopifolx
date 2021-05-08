@@ -7,7 +7,7 @@ const NominationsGallery = ( props ) => {
         return (
             <p>TEST</p>
         );
-    } else if (props.movies.length <= 5){
+    } else if (props.movies.length <= 4){
         return (
             <PosterGallery 
                 backgroundColor="rgba(39, 39, 39, 0.5)"
@@ -22,7 +22,7 @@ const NominationsGallery = ( props ) => {
             <PosterGallery 
                 backgroundColor="rgba(39, 39, 39, 0.5)"
                 sectionTitle={"your nominations"}
-                sectionSubtitle={"whoops, you can only pick five movies! choose wisely...🧠"}
+                sectionSubtitle={"❗❗ you've reached the max nomination limit. click continue or remove a pick ❗❗"}
                 movies={props.movies}
                 handleNominationClick={props.handleNominationClick}
             />

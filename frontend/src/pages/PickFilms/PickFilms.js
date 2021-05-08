@@ -23,6 +23,7 @@ function PickFilms() {
   const [movies, setMovies] = useState(DEFAULT_MOVIE_VALUES);
 	const [searchValue, setSearchValue] = useState('');
   const [nominations, setNominations] = useState([]);
+  const [username, setUsername] = useState('');
 
 	const getMovieRequest = async (searchValue) => {
 		const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=d8daf75a`;
@@ -40,7 +41,7 @@ function PickFilms() {
 	};
 
   const addNominatedMovie = (movie) => {
-    if (nominations.length <= 5) {
+    if (nominations.length <= 4) {
       const newNominationsList = [...nominations, movie];
       setNominations(newNominationsList);
       saveToLocalStorage(newNominationsList);
@@ -68,12 +69,20 @@ function PickFilms() {
       setNominations(movieNominations);
 	}, []);
 
+  useEffect(() => {
+		const storedUsername = JSON.parse(
+			localStorage.getItem('films-of-shopifolx-username')
+		);
+
+		if (storedUsername)
+      setUsername(storedUsername);
+	}, []);
+
   return (
     <div>
-      <Hero title="name your picks." subtitle="choose up to 5 films to nominate for this year’s Shoppies awards."/>
+      <Hero username={username} title="name your picks." subtitle="choose up to 5 films to nominate for this year’s Shoppies awards."/>
       <SearchBar value={searchValue} setSearchValue={setSearchValue} />
       <NominationsGallery
-        backgroundColor="rgba(39, 39, 39, 0.95);"
         movies={nominations}
         icon={NominationModal}
         handleNominationClick={removeNominatedMovie}

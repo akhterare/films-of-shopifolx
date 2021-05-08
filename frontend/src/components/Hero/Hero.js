@@ -5,7 +5,9 @@ import { HeroContainer, HeroContent, HeroTitle, HeroSubtitles } from "./Hero.sty
 const Hero = ( props ) => (
    <HeroContainer>
        <HeroContent>
-           <HeroTitle color>{props.title}</HeroTitle>
+           <HeroTitle color>
+              {props.username ? props.username : ""}{props.username ? ", " : ""}{props.title}
+            </HeroTitle>
            <HeroSubtitles>{props.subtitle}</HeroSubtitles>
         </HeroContent>
    </HeroContainer>
