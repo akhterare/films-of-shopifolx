@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter, HashRouter, Route, Switch } from "react-router-dom";
 import GlobalStyles from './GlobalStyles';
 import { Navbar } from './components';
 import Landing from './pages/Landing/Landing.js';
@@ -11,7 +11,7 @@ import Nominations from './pages/Nominations/Nominations.js';
 
 function App() {
   return(
-    <Router>
+    <BrowserRouter basename={"/films-of-shopifolx"}>
       <GlobalStyles />
       <Navbar />
       <Switch>
@@ -20,7 +20,7 @@ function App() {
         <Route path="/films-of-shopifolx/pick-films" exact component={() => <PickFilms />} />
         <Route path="/nominations" exact component={() => <Nominations />} />
       </Switch>
-    </Router>
+    </BrowserRouter>
   )
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import 
 {
     Nav,
@@ -12,9 +12,11 @@ const Navbar = () => (
     <Nav>
         <NavbarContainer>
             <Menu>
-                <MenuItems to="/films-of-shopifolx/">Home</MenuItems>
-                <MenuItems to="/films-of-shopifolx/pick-films">Pick Films</MenuItems>
-                <MenuItems to="/films-of-shopifolx/nominations">My Nominations</MenuItems>
+                <BrowserRouter>
+                    <MenuItems to="/">Home</MenuItems>
+                    <MenuItems to="/pick-films">Pick Films</MenuItems>
+                    <MenuItems to="/nominations">My Nominations</MenuItems>
+                </BrowserRouter>
             </Menu>   
         </NavbarContainer>
     </Nav>
