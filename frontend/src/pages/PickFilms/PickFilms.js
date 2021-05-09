@@ -66,6 +66,7 @@ function PickFilms() {
       setMovies(newMovies);
     }
     else{
+      // Must be at max films!
       const newAtMaxFilms = true;
       setAtMaxFilms(newAtMaxFilms);
     }
@@ -119,7 +120,11 @@ function PickFilms() {
   return (
     <div>
       <Hero username={username} title="name your picks." subtitle="choose up to 5 films to nominate for this year’s Shoppies awards."/>
-      <SearchBar value={searchValue} setSearchValue={setSearchValue} />
+      <SearchBar 
+        value={searchValue} 
+        setSearchValue={setSearchValue} 
+        atMaxFilms={atMaxFilms}
+      />
       <NominationsGallery
         atMax = {atMaxFilms}
         movies={nominations}

@@ -10,9 +10,15 @@ const SearchBar = ( props ) => (
             onChange={(event) => props.setSearchValue(event.target.value)}
             placeholder='search for your fave films' 
         />
-        <SearchBtn to="/nominations">
-            <Button>continue</Button>
-        </SearchBtn>
+        {props.atMaxFilms ? 
+            <SearchBtn to="/nominations">
+                <Button>continue</Button>
+            </SearchBtn>
+            :
+            <SearchBtn to="pick-films">
+                <Button>search</Button>
+            </SearchBtn>
+        }
     </SearchBarContainer>
 )
   
