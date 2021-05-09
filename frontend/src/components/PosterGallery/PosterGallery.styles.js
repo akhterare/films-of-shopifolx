@@ -30,7 +30,6 @@ export const SectionSubtitle = styled.h4`
     text-align: center;
     justify-content: center;
     color: #FFFFFF;
-    padding-bottom: 20px;
 `
 
 export const PosterGalleryContainer = styled.div`
@@ -38,8 +37,8 @@ export const PosterGalleryContainer = styled.div`
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding-top: 3rem;
-    margin-top: 5rem;
+    padding-top: 1rem;
+    margin-top: 2rem;
     float: left,
 `;
 
