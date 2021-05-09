@@ -38,6 +38,7 @@ const GlobalStyles =  createGlobalStyle`
     }
 
     h2 {
+        padding: 0px;
         font-family: Roboto, sans-serif;
         font-style: normal;
         font-weight: normal;

@@ -24,7 +24,6 @@ export const WelcomeTitle = styled.h1`
 `;
 
 export const WelcomeSubTitles = styled.h3`
-    padding: 30px;
     text-align: center;
     color: #FFFFFF;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
