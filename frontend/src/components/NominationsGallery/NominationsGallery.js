@@ -21,6 +21,8 @@ const NominationsGallery = ( props ) => {
                 handleModalOpen={props.handleModalOpen}
                 modalOpen={props.modalOpen}
                 buttonText={props.buttonText}
+                showButton = {props.showButton}
+                currMovie = {props.currMovie}
             />
         );
     } else {
@@ -37,6 +39,8 @@ const NominationsGallery = ( props ) => {
                 modalOpen={props.modalOpen}
                 showContinue={true}
                 buttonText={props.buttonText}
+                showButton = {props.showButton}
+                currMovie = {props.currMovie}
             />
         );
     }

@@ -22,16 +22,17 @@ const Poster = ( props ) => {
             <PosterImage 
                 src={props.movie.Poster} 
                 alt='movie'
-                onClick = {handleOpen}
+                onClick = {props.handleModalOpen(props.movie)}
             />
-            <MovieInfoModal
+{/*             <MovieInfoModal
                 buttonText={props.buttonText}
-                open={open}
+                open = {props.modalOpen}
                 atMax={props.atMax}
                 handleNominationClick={props.handleNominationClick}
                 movie={props.movie}
-                onClose={handleClose}
-            />
+                onClose={props.handleModalOpen}
+                showButton = {props.showButton}
+            /> */}
         </PosterContainer>
 	);
 };

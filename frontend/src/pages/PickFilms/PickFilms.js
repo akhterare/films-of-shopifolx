@@ -25,15 +25,29 @@ function PickFilms() {
 	const [searchValue, setSearchValue] = useState('');
   const [nominations, setNominations] = useState([]);
   const [username, setUsername] = useState('');
-  const [modalOpen, setModalOpen] = useState(false);
+  const [nominationModalOpen, setNominationModalOpen] = useState(false);
+  const [removalModalOpen, setRemovalModalOpen] = useState(false);
   const [atMaxFilms, setAtMaxFilms] = useState(false);
+  const [currMovie, setCurrMovie] = useState("");
 
-  const handleModalOpen = () => {
-		setModalOpen(true);
+  const handleNominationModalOpen = ( movie ) => {
+    setCurrMovie(movie);
+		setNominationModalOpen(true);
 	  };
 	
-	const handleModalClose = () => {
-		setModalOpen(false);
+	const handleNominationModalClose = () => {
+		setNominationModalOpen(false);
+    setCurrMovie("");
+	};
+
+  const handleRemovalModalOpen = ( movie ) => {
+    setCurrMovie(movie);
+		setRemovalModalOpen(true);
+	  };
+	
+	const handleRemovalModalClose = () => {
+		setRemovalModalOpen(false);
+    setCurrMovie("");
 	};
 
 	const getMovieRequest = async (searchValue) => {
@@ -70,9 +84,14 @@ function PickFilms() {
       const newAtMaxFilms = true;
       setAtMaxFilms(newAtMaxFilms);
     }
+
     console.log("We're ADDING");
+    setNominationModalOpen(false);
+    console.log(nominationModalOpen);
+    
     // Close modal
-    handleModalClose();
+    setCurrMovie(movie);
+    handleNominationModalClose();
   };
 
   const removeNominatedMovie = (movie) => {
@@ -92,7 +111,7 @@ function PickFilms() {
     saveToLocalStorage(newNominationsList);
 
     // Close modal
-    handleModalClose();
+    handleRemovalModalClose();
   };
 
 	useEffect(() => {
@@ -130,21 +149,25 @@ function PickFilms() {
         movies={nominations}
         icon={NominationModal}
         handleNominationClick={removeNominatedMovie}
-        handleModalClose={handleModalClose}
-        handleModalOpen={handleModalOpen}
-        modalOpen={modalOpen}
+        handleModalClose={handleRemovalModalClose}
+        handleModalOpen={handleRemovalModalOpen}
+        modalOpen={removalModalOpen}
         buttonText="Remove This Film"
+        showButton = {true}
+        currMovie = {currMovie}
       />
       <PosterGallery 
         atMax = {atMaxFilms}
         sectionSubtitle="here's what we found 👀"
         movies={movies} 
         icon={RemovalModal}
-        handleNominationClick={addNominatedMovie}
-        handleModalClose={handleModalClose}
-        handleModalOpen={handleModalOpen}
-        modalOpen={modalOpen}
-        buttonText="Nominate This Film"
+        handleNominationClick={atMaxFilms ? removeNominatedMovie : addNominatedMovie}
+        handleModalClose={handleNominationModalClose}
+        handleModalOpen={handleNominationModalOpen}
+        modalOpen={nominationModalOpen}
+        buttonText={atMaxFilms ? "Remove This Film" : "Nominate This Film"}
+        showButton = {true}
+        currMovie = {currMovie}
       />
     </div>
   );

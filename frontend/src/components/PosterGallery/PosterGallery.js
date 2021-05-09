@@ -9,6 +9,7 @@ import {
     PosterGalleryGrid, 
 } from './PosterGallery.styles'
 import Button from '../../GlobalStyles'
+import MovieInfoModal from '../MovieInfoModal/MovieInfoModal';
 
 const PosterGallery = ( props ) => {
     
@@ -30,14 +31,20 @@ const PosterGallery = ( props ) => {
                         modalOpen={props.modalOpen}
                         buttonText={props.buttonText}
                         showButton = {props.showButton}
+                        currMovie = {props.currMovie}
                     />
                 ))}
+                {(props.movies.includes(props.currMovie)) ? <MovieInfoModal
+                    buttonText={props.buttonText}
+                    open = {props.modalOpen}
+                    atMax={props.atMax}
+                    handleNominationClick={props.handleNominationClick}
+                    movie={props.currMovie}
+                    onClose={props.handleModalClose}
+                    showButton = {props.showButton}
+                /> :
+                null }
             </PosterGalleryGrid>
-            {props.showContinue ? 
-                <ContinueBtn to="/nominations">
-                    <Button>continue</Button>
-                </ContinueBtn>
-            : null }
         </PosterGalleryContainer >
     );
 };
