@@ -25,11 +25,6 @@ const PosterGallery = ( props ) => {
                     />
                 ))}
             </PosterGalleryGrid>
-            {props.showContinue ? 
-                <ContinueBtn to="/nominations">
-                    <Button>continue</Button>
-                </ContinueBtn>
-            : null }
         </PosterGalleryContainer >
     );
 };

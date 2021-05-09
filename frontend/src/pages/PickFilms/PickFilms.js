@@ -52,14 +52,14 @@ function PickFilms() {
         (currMovie) => currMovie.imdbID !== movie.imdbID
       );
       setMovies(newMovieList);
-     
-      // haven't hit five films yet
-      setAtMaxFilms(false);
-
+      console.log("IF STATEMENT");
     }
-    else {
-      // haven't hit five films yet
+
+    if (nominations.length >= 4){
       setAtMaxFilms(true);
+    }
+    else{
+      setAtMaxFilms(false);
     }
   };
 
