@@ -22,7 +22,6 @@ export const HeroTitle = styled.h2`
 `;
 
 export const HeroSubtitles = styled.h4`
-    padding: 20px;
     text-align: center;
     color: #FFFFFF;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);

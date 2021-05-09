@@ -33,16 +33,27 @@ export const SectionSubtitle = styled.h4`
     padding-bottom: 20px;
 `
 
-export const PosterGalleryGrid = styled.div`
+export const PosterGalleryContainer = styled.div`
     background-color: ${props => props.backgroundColor};
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-top: 2rem;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 50px 50px;
-    grid-gap: 50px;
-    padding: 20px;
+    padding-top: 3rem;
+    margin-top: 5rem;
+    float: left,
+`;
+
+export const PosterGalleryGrid = styled.div`
+    float: left,
+    margin-left: 2rem;
+    margin-right: 1rem;
+    padding-right: 10px;
+    width: 100%;
+    overflow-x: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: ${props => props.backgroundColor};
 `;
 
 export const PosterModal = styled.div`
