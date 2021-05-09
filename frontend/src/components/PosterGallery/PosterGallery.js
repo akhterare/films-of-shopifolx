@@ -25,6 +25,10 @@ const PosterGallery = ( props ) => {
                         atMax={props.atMax}
                         movie={movie}
                         handleNominationClick={props.handleNominationClick}
+                        handleModalClose={props.handleModalClose}
+                        handleModalOpen={props.handleModalOpen}
+                        modalOpen={props.modalOpen}
+                        buttonText={props.buttonText}
                     />
                 ))}
             </PosterGalleryGrid>

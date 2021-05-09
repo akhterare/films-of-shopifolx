@@ -4,6 +4,7 @@ import SearchBar from "../../components/SearchBar/SearchBar.js";
 import PosterGallery from "../../components/PosterGallery/PosterGallery.js";
 import NominationModal from "../../components/MovieInfoModal/MovieInfoModal.js"
 import NominationsGallery from "../../components/NominationsGallery/NominationsGallery.js";
+import RemovalModal from "../../components/RemovalModal/RemovalModal.js";
 
 function PickFilms() {
   const DEFAULT_MOVIE_VALUES =
@@ -24,7 +25,16 @@ function PickFilms() {
 	const [searchValue, setSearchValue] = useState('');
   const [nominations, setNominations] = useState([]);
   const [username, setUsername] = useState('');
+  const [modalOpen, setModalOpen] = useState(false);
   const [atMaxFilms, setAtMaxFilms] = useState(false);
+
+  const handleModalOpen = () => {
+		setModalOpen(true);
+	  };
+	
+	const handleModalClose = () => {
+		setModalOpen(false);
+	};
 
 	const getMovieRequest = async (searchValue) => {
 		const url = `https://www.omdbapi.com/?s=${searchValue}&apikey=d8daf75a`;
@@ -60,6 +70,8 @@ function PickFilms() {
       setAtMaxFilms(newAtMaxFilms);
     }
     console.log("We're ADDING");
+    // Close modal
+    handleModalClose();
   };
 
   const removeNominatedMovie = (movie) => {
@@ -78,6 +90,8 @@ function PickFilms() {
     setNominations(newNominationsList);
     saveToLocalStorage(newNominationsList);
 
+    // Close modal
+    handleModalClose();
   };
 
 	useEffect(() => {
@@ -111,14 +125,21 @@ function PickFilms() {
         movies={nominations}
         icon={NominationModal}
         handleNominationClick={removeNominatedMovie}
-
+        handleModalClose={handleModalClose}
+        handleModalOpen={handleModalOpen}
+        modalOpen={modalOpen}
+        buttonText="Remove This Film"
       />
       <PosterGallery 
         atMax = {atMaxFilms}
         sectionSubtitle="here's what we found 👀"
         movies={movies} 
-        icon={NominationModal}
+        icon={RemovalModal}
         handleNominationClick={addNominatedMovie}
+        handleModalClose={handleModalClose}
+        handleModalOpen={handleModalOpen}
+        modalOpen={modalOpen}
+        buttonText="Nominate This Film"
       />
     </div>
   );

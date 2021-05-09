@@ -17,6 +17,10 @@ const NominationsGallery = ( props ) => {
                 sectionSubtitle={"you have some 🔥 picks!"}
                 movies={props.movies}
                 handleNominationClick={props.handleNominationClick}
+                handleModalClose={props.handleModalClose}
+                handleModalOpen={props.handleModalOpen}
+                modalOpen={props.modalOpen}
+                buttonText={props.buttonText}
             />
         );
     } else {
@@ -28,7 +32,11 @@ const NominationsGallery = ( props ) => {
                 sectionSubtitle={"❗❗ you've reached the max nomination limit. click continue or remove a pick ❗❗"}
                 movies={props.movies}
                 handleNominationClick={props.handleNominationClick}
+                handleModalClose={props.handleModalClose}
+                handleModalOpen={props.handleModalOpen}
+                modalOpen={props.modalOpen}
                 showContinue={true}
+                buttonText={props.buttonText}
             />
         );
     }

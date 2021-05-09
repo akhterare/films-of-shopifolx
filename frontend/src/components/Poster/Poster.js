@@ -25,6 +25,7 @@ const Poster = ( props ) => {
                 onClick = {handleOpen}
             />
             <MovieInfoModal
+                buttonText={props.buttonText}
                 open={open}
                 atMax={props.atMax}
                 handleNominationClick={props.handleNominationClick}
