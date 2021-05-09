@@ -38,7 +38,8 @@ const GlobalStyles =  createGlobalStyle`
     }
 
     h2 {
-        padding: 0px;
+        margin-top: 0;
+        margin-bottom: 0;
         font-family: Roboto, sans-serif;
         font-style: normal;
         font-weight: normal;
@@ -47,6 +48,8 @@ const GlobalStyles =  createGlobalStyle`
     }
 
     h1 {
+        margin-top: 0;
+        margin-bottom: 0;
         font-family: Roboto, sans-serif;
         font-style: normal;
         font-weight: 800;

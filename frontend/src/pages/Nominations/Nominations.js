@@ -28,11 +28,11 @@ function Nominations(props) {
   if (nominations.length > 0) 
     return (
       <div>
-        <Hero username={username} title="you've got good taste." subtitle="save + share your shoppies 2021 picks. we'll see you next year."/>
+        <Hero username={username} title="you've got good taste." subtitle="save + screenshot your shoppies 2021 picks. we'll see you next year."/>
         <PosterGallery
           backgroundColor="rgba(39, 39, 39, 0.5)"
-          sectionTitle="your nominations"
-          sectionSubtitle="you have some 🔥 picks!"
+          sectionTitle="🏆  presenting: your Shoppies 2021 nominations  🏆"
+          sectionSubtitle=""
           movies={nominations}
           handleNominationClick={() => null}
         />

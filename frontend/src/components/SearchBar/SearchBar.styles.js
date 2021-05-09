@@ -8,7 +8,7 @@ export const SearchBarContainer = styled.section`
     width: 100%;
 `;
 
-export const SearchButton = styled(Link)`
+export const SearchBtn = styled(Link)`
     text-decoration: none;
     justify-content: center;
     align-items: center;
