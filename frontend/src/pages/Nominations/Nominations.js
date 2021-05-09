@@ -35,6 +35,7 @@ function Nominations(props) {
           sectionSubtitle=""
           movies={nominations}
           handleNominationClick={() => null}
+          showButton = {false}
         />
       </div>
     );

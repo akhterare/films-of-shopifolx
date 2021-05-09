@@ -29,6 +29,7 @@ const PosterGallery = ( props ) => {
                         handleModalOpen={props.handleModalOpen}
                         modalOpen={props.modalOpen}
                         buttonText={props.buttonText}
+                        showButton = {props.showButton}
                     />
                 ))}
             </PosterGalleryGrid>

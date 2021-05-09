@@ -46,12 +46,14 @@ export default function MovieInfoModal(props) {
     <div style={modalStyle} className={classes.paper}>
         <MovieTitle id="movie-title">{props.movie.Title}</MovieTitle>
         <MovieYear id="movie-year">{props.movie.Year}</MovieYear>	
-        <NominateBtn
+        { props.showButton ? 
+          <NominateBtn
             onClick={() => 
                 props.handleNominationClick(props.movie)}
-        >   
+          >   
         {props.buttonText}
         </NominateBtn>
+        : null }
     </div>
   );
 
