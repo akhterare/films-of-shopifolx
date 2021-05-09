@@ -1,9 +1,8 @@
 import styled, {createGlobalStyle} from 'styled-components';
 
-const GlobalStyles = createGlobalStyle`
+const GlobalStyles =  createGlobalStyle`
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-    *{
+    {
         margin: 0;
         padding: 0;
         box-sizing: inherit;
@@ -52,8 +51,7 @@ const GlobalStyles = createGlobalStyle`
         font-weight: 800;
         font-size: 48px;
         line-height: 58px;
-    }
-    
+    } 
 `;
 
 export default GlobalStyles;
