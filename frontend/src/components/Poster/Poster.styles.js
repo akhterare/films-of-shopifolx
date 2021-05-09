@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const PosterImage = styled.img`
     border-radius: 5px;
@@ -48,9 +49,13 @@ export const PosterTitle = styled.h4`
     color: white;
     font-size: 20px;
     opacity: 0;
-    &:hover{
-        border: 1px solid #323131 !important;
-        opacity: 1;
-    }
 `;
 
+export const NominateBtn = styled(Link)`
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    border: none;
+    outline: none;
+`;
