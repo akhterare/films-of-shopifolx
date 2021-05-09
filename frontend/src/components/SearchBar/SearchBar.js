@@ -11,7 +11,7 @@ const SearchBar = ( props ) => (
             placeholder='search for your fave films' 
         />
         <SearchBtn to="/nominations">
-            <Button>search</Button>
+            <Button>continue</Button>
         </SearchBtn>
     </SearchBarContainer>
 )

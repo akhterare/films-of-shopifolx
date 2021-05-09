@@ -26,7 +26,7 @@ function PickFilms() {
   const [username, setUsername] = useState('');
 
 	const getMovieRequest = async (searchValue) => {
-		const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=d8daf75a`;
+		const url = `https://www.omdbapi.com/?s=${searchValue}&apikey=d8daf75a`;
 
 		const response = await fetch(url);
 		const responseJson = await response.json();
