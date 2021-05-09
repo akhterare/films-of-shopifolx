@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/films-of-shopifolx/static/js/main.dc3635c8.chunk.js",
-    "main.js.map": "/films-of-shopifolx/static/js/main.dc3635c8.chunk.js.map",
+    "main.js": "/films-of-shopifolx/static/js/main.041d7fe7.chunk.js",
+    "main.js.map": "/films-of-shopifolx/static/js/main.041d7fe7.chunk.js.map",
     "runtime-main.js": "/films-of-shopifolx/static/js/runtime-main.4cf4f68f.js",
     "runtime-main.js.map": "/films-of-shopifolx/static/js/runtime-main.4cf4f68f.js.map",
-    "static/js/2.2f672811.chunk.js": "/films-of-shopifolx/static/js/2.2f672811.chunk.js",
-    "static/js/2.2f672811.chunk.js.map": "/films-of-shopifolx/static/js/2.2f672811.chunk.js.map",
+    "static/js/2.81e46c61.chunk.js": "/films-of-shopifolx/static/js/2.81e46c61.chunk.js",
+    "static/js/2.81e46c61.chunk.js.map": "/films-of-shopifolx/static/js/2.81e46c61.chunk.js.map",
     "index.html": "/films-of-shopifolx/index.html",
-    "static/js/2.2f672811.chunk.js.LICENSE.txt": "/films-of-shopifolx/static/js/2.2f672811.chunk.js.LICENSE.txt"
+    "static/js/2.81e46c61.chunk.js.LICENSE.txt": "/films-of-shopifolx/static/js/2.81e46c61.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.4cf4f68f.js",
-    "static/js/2.2f672811.chunk.js",
-    "static/js/main.dc3635c8.chunk.js"
+    "static/js/2.81e46c61.chunk.js",
+    "static/js/main.041d7fe7.chunk.js"
   ]
 }
