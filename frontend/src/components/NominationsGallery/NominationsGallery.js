@@ -1,5 +1,6 @@
 import React from 'react';
 import PosterGallery from '../PosterGallery/PosterGallery.js'
+import RemovalModal from '../RemovalModal/RemovalModal.js';
 /* import SectionSubtitle from './NominationsGallery.styles.js'
  */
 const NominationsGallery = ( props ) => {
@@ -10,6 +11,7 @@ const NominationsGallery = ( props ) => {
     } else if (props.movies.length <= 4){
         return (
             <PosterGallery 
+                movieInfoModal={props.movieInfoModal}
                 backgroundColor="rgba(39, 39, 39, 0.5)"
                 sectionTitle={"your nominations"}
                 sectionSubtitle={"you have some 🔥 picks!"}
@@ -20,6 +22,7 @@ const NominationsGallery = ( props ) => {
     } else {
         return (
             <PosterGallery 
+                movieInfoModal={props.movieInfoModal}
                 backgroundColor="rgba(39, 39, 39, 0.5)"
                 sectionTitle={"your nominations"}
                 sectionSubtitle={"❗❗ you've reached the max nomination limit. click continue or remove a pick ❗❗"}

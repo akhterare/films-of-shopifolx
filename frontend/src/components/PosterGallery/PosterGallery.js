@@ -11,6 +11,7 @@ import {
 import Button from '../../GlobalStyles'
 
 const PosterGallery = ( props ) => {
+    
     return (
         <PosterGalleryContainer 
             backgroundColor={props.backgroundColor}
@@ -20,6 +21,8 @@ const PosterGallery = ( props ) => {
             <PosterGalleryGrid>
                 {props.movies.map((movie, index) => (
                     <Poster 
+                        movieInfoModal={props.movieInfoModal}
+                        atMax={props.atMax}
                         movie={movie}
                         handleNominationClick={props.handleNominationClick}
                     />

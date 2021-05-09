@@ -1,8 +1,7 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 export const PosterImage = styled.img`
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 5px 5px 5px 5px;
     max-width: 100%;
     display: block;
@@ -34,7 +33,6 @@ export const PosterOverlay = styled.div`
     position: absolute;
     background: rgba(0, 0, 0, 0.8);
     width: 100%;
-    transition: 0.5s ease;
     opacity: 0;
     bottom: 0;
     font-size: 20px;
@@ -49,13 +47,4 @@ export const PosterTitle = styled.h4`
     color: white;
     font-size: 20px;
     opacity: 0;
-`;
-
-export const NominateBtn = styled(Link)`
-    text-decoration: none;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    border: none;
-    outline: none;
 `;

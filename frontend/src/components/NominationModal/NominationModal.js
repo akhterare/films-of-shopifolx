@@ -1,19 +1,16 @@
-/* import React from 'react';
-import StyledModal from './NominationModal.styles'
-import Button from "../../GlobalStyles"
+import React from 'react'
+import MovieInfoModal from '../MovieInfoModal/MovieInfoModal'
 
-const NominationModal = () => {
-	return (
-		<>
-		<Button>choose your nominees</Button>
-		<StyledModal 
-			open={open}
-			onClose={handleClose}
-			aria-labelledby="simple-modal-title"
-			aria-describedby="simple-modal-description">
-		</StyledModal>
-		</>
+export default function NominationalModal(props) {
+    return (
+        <MovieInfoModal 
+            handleNominationClick={props.handleNominationClick}
+            buttonText= "Nominate This Film"
+            open={open}
+            atMax={props.atMax}
+            handleNominationClick={props.handleNominationClick}
+            movie={props.movie}
+            onClose={handleClose}
+        />
 	);
-};
-
-export default NominationModal; */
+}

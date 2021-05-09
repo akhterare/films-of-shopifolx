@@ -2,7 +2,7 @@ import React,  { useState, useEffect } from "react";
 import Hero from "../../components/Hero/Hero.js"
 import SearchBar from "../../components/SearchBar/SearchBar.js";
 import PosterGallery from "../../components/PosterGallery/PosterGallery.js";
-import NominationModal from "../../components/NominationModal/NominationModal.js"
+import NominationModal from "../../components/MovieInfoModal/MovieInfoModal.js"
 import NominationsGallery from "../../components/NominationsGallery/NominationsGallery.js";
 
 function PickFilms() {
@@ -24,6 +24,7 @@ function PickFilms() {
 	const [searchValue, setSearchValue] = useState('');
   const [nominations, setNominations] = useState([]);
   const [username, setUsername] = useState('');
+  const [atMaxFilms, setAtMaxFilms] = useState(false);
 
 	const getMovieRequest = async (searchValue) => {
 		const url = `https://www.omdbapi.com/?s=${searchValue}&apikey=d8daf75a`;
@@ -45,15 +46,38 @@ function PickFilms() {
       const newNominationsList = [...nominations, movie];
       setNominations(newNominationsList);
       saveToLocalStorage(newNominationsList);
+      const newAtMaxFilms = false;
+      setAtMaxFilms(newAtMaxFilms);
+
+      // Removing movie from library so that it can't be selected again
+      const newMovies = movies.filter(
+        (nomination) => nomination.imdbID !== movie.imdbID
+      );
+      setMovies(newMovies);
     }
+    else{
+      const newAtMaxFilms = true;
+      setAtMaxFilms(newAtMaxFilms);
+    }
+    console.log("We're ADDING");
   };
 
   const removeNominatedMovie = (movie) => {
+    console.log("We're REMOVING");
+
+    const newAtMaxFilms = false;
+    setAtMaxFilms(newAtMaxFilms);
+
+    // Re-adding movie to library
+    const newMovies = [...movies, movie];
+    setMovies(newMovies);
+
     const newNominationsList = nominations.filter(
       (nomination) => nomination.imdbID !== movie.imdbID
     );
     setNominations(newNominationsList);
     saveToLocalStorage(newNominationsList);
+
   };
 
 	useEffect(() => {
@@ -83,11 +107,14 @@ function PickFilms() {
       <Hero username={username} title="name your picks." subtitle="choose up to 5 films to nominate for this year’s Shoppies awards."/>
       <SearchBar value={searchValue} setSearchValue={setSearchValue} />
       <NominationsGallery
+        atMax = {atMaxFilms}
         movies={nominations}
         icon={NominationModal}
         handleNominationClick={removeNominatedMovie}
+
       />
       <PosterGallery 
+        atMax = {atMaxFilms}
         sectionSubtitle="here's what we found 👀"
         movies={movies} 
         icon={NominationModal}
