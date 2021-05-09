@@ -15,9 +15,7 @@ const SearchBar = ( props ) => (
                 <Button>continue</Button>
             </SearchBtn>
             :
-            <SearchBtn to="pick-films">
-                <Button>search</Button>
-            </SearchBtn>
+            null
         }
     </SearchBarContainer>
 )

@@ -6,6 +6,7 @@ export const SearchBarContainer = styled.section`
     justify-content: center;
     align-items: center;
     width: 100%;
+    padding-bottom: 2rem;
 `;
 
 export const SearchBtn = styled(Link)`
