@@ -41,7 +41,7 @@ function PickFilms() {
 	};
 
   const addNominatedMovie = (movie) => {
-    if (nominations.length <= 4) {
+    if (nominations.length <= 4 && !(nominations.includes(movie))) {
       const newNominationsList = [...nominations, movie];
       setNominations(newNominationsList);
       saveToLocalStorage(newNominationsList);
