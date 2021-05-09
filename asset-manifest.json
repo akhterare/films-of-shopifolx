@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/films-of-shopifolx/static/js/main.cb6ad867.chunk.js",
-    "main.js.map": "/films-of-shopifolx/static/js/main.cb6ad867.chunk.js.map",
+    "main.js": "/films-of-shopifolx/static/js/main.ea1a29a2.chunk.js",
+    "main.js.map": "/films-of-shopifolx/static/js/main.ea1a29a2.chunk.js.map",
     "runtime-main.js": "/films-of-shopifolx/static/js/runtime-main.4cf4f68f.js",
     "runtime-main.js.map": "/films-of-shopifolx/static/js/runtime-main.4cf4f68f.js.map",
     "static/js/2.f8ad7d2e.chunk.js": "/films-of-shopifolx/static/js/2.f8ad7d2e.chunk.js",
@@ -12,6 +12,6 @@
   "entrypoints": [
     "static/js/runtime-main.4cf4f68f.js",
     "static/js/2.f8ad7d2e.chunk.js",
-    "static/js/main.cb6ad867.chunk.js"
+    "static/js/main.ea1a29a2.chunk.js"
   ]
 }
