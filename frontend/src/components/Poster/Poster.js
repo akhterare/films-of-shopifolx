@@ -22,7 +22,7 @@ const Poster = ( props ) => {
             <PosterImage 
                 src={props.movie.Poster} 
                 alt='movie'
-                onClick = {props.handleModalOpen(props.movie)}
+                onClick = {props.handleNominationClick}
             />
 {/*             <MovieInfoModal
                 buttonText={props.buttonText}
