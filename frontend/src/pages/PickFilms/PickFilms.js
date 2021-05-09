@@ -4,6 +4,7 @@ import SearchBar from "../../components/SearchBar/SearchBar.js";
 import PosterGallery from "../../components/PosterGallery/PosterGallery.js";
 import NominationModal from "../../components/NominationModal/NominationModal.js"
 import NominationsGallery from "../../components/NominationsGallery/NominationsGallery.js";
+import MovieInfoModal from "../../components/MovieInfoModal/MovieInfoModal.js";
 
 function PickFilms() {
   const DEFAULT_MOVIE_VALUES =
@@ -25,6 +26,11 @@ function PickFilms() {
   const [nominations, setNominations] = useState([]);
   const [username, setUsername] = useState('');
   const [atMaxFilms, setAtMaxFilms] = useState(false);
+  const [selectedMovie, setSelectedMovie] = useState("");
+
+  const openModal = ( movie ) => {
+    setSelectedMovie(movie);
+  }
 
 	const getMovieRequest = async (searchValue) => {
 		const url = `https://www.omdbapi.com/?s=${searchValue}&apikey=d8daf75a`;
@@ -52,9 +58,9 @@ function PickFilms() {
         (currMovie) => currMovie.imdbID !== movie.imdbID
       );
       setMovies(newMovieList);
-      console.log("IF STATEMENT");
     }
 
+    setSelectedMovie(movie);
     if (nominations.length >= 4){
       setAtMaxFilms(true);
     }
@@ -67,11 +73,21 @@ function PickFilms() {
     const newNominationsList = nominations.filter(
       (nomination) => nomination.imdbID !== movie.imdbID
     );
+    console.log("NEW NOM LIST LENGTH IS");
+    console.log(newNominationsList.length);
     setNominations(newNominationsList);
     saveToLocalStorage(newNominationsList);
 
     // Repopulate search list 
     getMovieRequest(searchValue);
+
+    setSelectedMovie(movie);
+    if (newNominationsList.length > 4){
+      setAtMaxFilms(true);
+    }
+    else{
+      setAtMaxFilms(false);
+    }
   };
 
 	useEffect(() => {
@@ -96,6 +112,8 @@ function PickFilms() {
       setUsername(storedUsername);
 	}, []);
 
+  const selectedMovieData = "chosen: " + selectedMovie.Title + " (" + selectedMovie.Year + ")";
+
   return (
     <div>
       <Hero username={username} title="name your picks." subtitle="choose up to 5 films to nominate for this year’s Shoppies awards."/>
@@ -105,12 +123,21 @@ function PickFilms() {
         icon={NominationModal}
         handleNominationClick={removeNominatedMovie}
       />
-      <PosterGallery 
-        sectionSubtitle="here's what we found 👀"
+      <PosterGallery
+        sectionTitle="click on a film to nominate it!"
+        sectionSubtitle={selectedMovie ? selectedMovieData : "you haven't selected anything yet!"} 
         movies={movies} 
         icon={NominationModal}
         handleNominationClick={addNominatedMovie}
       />
+      <MovieInfoModal 
+        handleNominationClick={removeNominatedMovie}
+        movie={selectedMovie}
+        showButton={true}
+        buttonText={"test text"}
+        onClose={null}
+        open={false}
+      ></MovieInfoModal>
     </div>
   );
 }

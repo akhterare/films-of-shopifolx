@@ -4,6 +4,7 @@ import {
     PosterContainer,
     PosterOverlay,
     PosterTitle,
+    MovieTitle,
 } from './Poster.styles'
 
 const Poster = ( props ) => {
@@ -14,9 +15,7 @@ const Poster = ( props ) => {
                 alt='movie'
                 onClick={() => props.handleNominationClick(props.movie)}
             />
-            <PosterOverlay>
-                <PosterTitle>TEST OUT{props.movie.Title}</PosterTitle>
-            </PosterOverlay>
+            <MovieTitle>{props.movie.title}</MovieTitle>
         </PosterContainer>
 	);
 };

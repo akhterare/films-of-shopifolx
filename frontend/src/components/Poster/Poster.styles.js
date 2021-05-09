@@ -54,3 +54,22 @@ export const PosterTitle = styled.h4`
     }
 `;
 
+export const MovieTitle = styled.h4`
+    color: white;
+    padding: 0 15px 0 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 16px;
+    margin-block-start: 1px !important;
+    margin-block-end: 0px !important;
+`;
+
+export const MovieYear = styled.p`
+    display: block;
+    color: white;
+    margin-top: 0;
+    padding: 0 15px 0 15px;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 14px;
+`;

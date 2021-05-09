@@ -68,3 +68,24 @@ export const PosterModal = styled.div`
 	padding: 20px;
 	text-align: center;
 `
+export const NominateBtn = styled.button`
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+    font-family: Roboto, sans-serif;
+    border-radius: 20px;
+    background-color: #D20404;
+    color: #FFFFFF;
+    padding: 15px;
+    margin: 10px;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    transition: all .5s ease;
+    &:hover{
+        background-color: #BF2121;  
+        transform: translateY(-.2rem) scale(1.01);
+    }
+    &:active{
+        transform: translateY(.2rem);
+    }
+`

@@ -7,6 +7,7 @@ import {
     SectionSubtitle, 
     PosterGalleryContainer,
     PosterGalleryGrid, 
+    NominateBtn,
 } from './PosterGallery.styles'
 import Button from '../../GlobalStyles'
 
