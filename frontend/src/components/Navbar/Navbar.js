@@ -13,7 +13,6 @@ const Navbar = () => (
             <Menu>
                 <MenuItems to="/">Home</MenuItems>
                 <MenuItems to="/pick-films">Pick Films</MenuItems>
-                <MenuItems to="/nominations">My Nominations</MenuItems>
             </Menu>   
         </NavbarContainer>
     </Nav>
