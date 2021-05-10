@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import Modal from '@material-ui/core/Modal';
-import { Link } from 'react-router-dom';
 
 export const NominationModalContainer = styled.section`
     display: flex;

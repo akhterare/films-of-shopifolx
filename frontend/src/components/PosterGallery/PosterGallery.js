@@ -1,15 +1,11 @@
 import React from 'react';
 import Poster from '../Poster/Poster.js'
 import { 
-    Continue,
-    ContinueBtn,
     SectionTitle, 
     SectionSubtitle, 
     PosterGalleryContainer,
     PosterGalleryGrid, 
-    NominateBtn,
 } from './PosterGallery.styles'
-import Button from '../../GlobalStyles'
 
 const PosterGallery = ( props ) => {
     return (

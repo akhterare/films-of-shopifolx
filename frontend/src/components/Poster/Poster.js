@@ -2,8 +2,6 @@ import React from 'react';
 import { 
     PosterImage,
     PosterContainer,
-    PosterOverlay,
-    PosterTitle,
     MovieTitle,
 } from './Poster.styles'
 

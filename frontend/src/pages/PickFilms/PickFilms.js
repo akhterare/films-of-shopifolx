@@ -28,10 +28,6 @@ function PickFilms() {
   const [atMaxFilms, setAtMaxFilms] = useState(false);
   const [selectedMovie, setSelectedMovie] = useState("");
 
-  const openModal = ( movie ) => {
-    setSelectedMovie(movie);
-  }
-
 	const getMovieRequest = async (searchValue) => {
 		const url = `https://www.omdbapi.com/?s=${searchValue}&apikey=d8daf75a`;
 
@@ -80,6 +76,9 @@ function PickFilms() {
 
     // Repopulate search list 
     getMovieRequest(searchValue);
+
+    const newMovieList = [...movies, movie];
+    setMovies(newMovieList);
 
     setSelectedMovie(movie);
     if (newNominationsList.length > 4){

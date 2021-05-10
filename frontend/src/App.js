@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BrowserRouter, HashRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Navbar } from './components';
 import Landing from './pages/Landing/Landing.js';
 import PickFilms from './pages/PickFilms/PickFilms.js';

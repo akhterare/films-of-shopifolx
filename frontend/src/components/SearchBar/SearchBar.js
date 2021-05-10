@@ -1,6 +1,9 @@
 import React from "react"
 import { Input, Button } from "../../GlobalStyles"
-import { SearchBarContainer, SearchBtn, SearchButtonSubtitle, SearchBarSubtitleContainer } from "./SearchBar.styles";
+import { 
+    SearchBarContainer, 
+    SearchBtn,
+} from "./SearchBar.styles";
 
 const SearchBar = ( props ) => (
    <SearchBarContainer>

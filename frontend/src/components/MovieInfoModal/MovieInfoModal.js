@@ -7,7 +7,6 @@ import {
   NominateBtn,
 }
 from './MovieInfoModal.styles';
-import Button from "../../GlobalStyles"
 
 function rand() {
   return Math.round(Math.random() * 20) - 10;
